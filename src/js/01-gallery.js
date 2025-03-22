@@ -2,6 +2,8 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
+
+
 const gallery = document.querySelector('.gallery');
 
 const images = [
@@ -75,10 +77,10 @@ gallery.innerHTML = images
     ({ preview, original, description }) =>
       `<li class="gallery-item">
 	<a class="gallery-link" href=${original}>
-		<img 
-			class="gallery-image" 
+		<img
+			class="gallery-image"
 			src=${preview}
-			alt=${description} 
+			alt=${description}
 			/>
 	</a>
 </li>`
@@ -86,10 +88,8 @@ gallery.innerHTML = images
   .join('');
 gallery.style.display = 'grid';
 gallery.style.gridTemplateColumns = 'repeat(3,1fr';
-img.style.width = '100%';
-img.addEventListener('click', event => {
-  event.preventDefault();
-});
+
+
 
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
